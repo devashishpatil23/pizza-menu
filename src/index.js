@@ -49,7 +49,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div className="container"> 
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -60,7 +60,7 @@ function App() {
 function Header() {
   return (
     <header className="header">
-      <h1> Pizza Menu App </h1>
+      <h1> Pizza Menu App.</h1>
     </header>
   );
 }
@@ -70,14 +70,14 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
 
-      {pizzas  ? (
+      {pizzas ? (
         <>
-        <p>Good and tasty pizzas ever!</p>
-        <ul className="pizzas">
-          {pizzas.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={pizza.name} />
-          ))}
-        </ul>
+          <p>Good and tasty pizzas ever!</p>
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
+          </ul>
         </>
       ) : (
         "We are still working on your menu, Please come back later."
@@ -86,14 +86,14 @@ function Menu() {
   );
 }
 
-function Pizza({pizzaObj}) {
+function Pizza({ pizzaObj }) {
   return (
-    <li className={`pizza ${pizzaObj.soldOut ? 'sold-out' : ""}`}>
+    <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.soldOut ? 'SOLD OUT' : pizzaObj.price}</span>
+        <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
       </div>
     </li>
   );
@@ -113,7 +113,7 @@ function Footer() {
   return (
     <footer className="footer">
       {isOpen ? (
-        <Order closeHour={closeHour } />
+        <Order closeHour={closeHour} />
       ) : (
         <p>
           We welcome you between {openHour}:00 and {closeHour}:00.
@@ -123,12 +123,10 @@ function Footer() {
   );
 }
 
-function Order({closeHour}) {
+function Order({ closeHour }) {
   return (
     <div className="order">
-      <p>
-        We're open until {closeHour}:00. Come visit us or order online.
-      </p>
+      <p>We're open until {closeHour}:00. Come visit us or order online.</p>
       <button className="btn">Order</button>
     </div>
   );
